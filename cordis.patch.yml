@@ -1,0 +1,17 @@
+# dsh-plugin-chip-collect bundle patch.
+#
+# A bundle patch is a top-level array of loader patch entries. This bundle owns a
+# single row: the CHIP Collect plugin itself. Every setting below is optional and
+# carries a default in the plugin's `Config`, so an install that adds this bundle
+# to `dsh.profile.bundles` works with no further editing.
+#
+# Override any value from the profile's own `cordis.patch.yml` (an id-targeted
+# patch replaces the whole matched config, so restate the fields you keep):
+#
+#   - id: chip-collect
+#     config:
+#       brandId: 409eb80e-3782-4b1d-afa8-b779759266a5
+#       secretKeyEnv: CHIP_COLLECT_SECRET_KEY
+- insert:
+    - id: chip-collect
+      name: 'dsh-plugin-chip-collect/plugin'
